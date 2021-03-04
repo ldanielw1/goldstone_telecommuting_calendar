@@ -2,13 +2,6 @@
  * Customizes the FullCalendar view in the dashboard view.
  */
 function loadCalendar() {
-  next_month = gon.data["next_month"]
-  next_year = gon.data["next_year"]
-  this_month = gon.data["this_month"]
-  this_year = gon.data["this_year"]
-  prev_month = gon.data["prev_month"]
-  prev_year = gon.data["prev_year"]
-
   $('#meetings_calendar').fullCalendar({
     title: "MM YYYY",
     eventSources: [ gon.data["events"] ],
@@ -34,6 +27,22 @@ function loadCalendar() {
       $("a.fc-event").each(function(index, child) {
         if (typeof($(child).attr('href')) != 'undefined')
           $(child).removeAttr('href');
+      });
+
+      // Adjust prev/today/next behavior
+      url = window.location.href
+      $(".fc-prev-button").unbind();
+      $(".fc-prev-button").click(function(event) {
+        window.location.href = url.split("?")[0] + "?default_date=" + gon.data["prev_date"];
+      });
+      $(".fc-next-button").unbind();
+      $(".fc-next-button").click(function(event) {
+        window.location.href = url.split("?")[0] + "?default_date=" + gon.data["next_date"];
+      });
+      $(".fc-today-button").unbind();
+      $(".fc-today-button").click(function(event) {
+        window.location.href = url.split("?")[0] + "?default_date=" + gon.data["today"];
+        event.stopPropagation();
       });
 
       // Add keyboard shortcuts for prev/today/next behavior
