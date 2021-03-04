@@ -24,6 +24,8 @@ class CalendarController < ApplicationController
         color = is_me ? "#464646" : "#e8e8e8"
       elsif title =~ /^QUIET: /
         color = is_me ? "#8200bb" : "#f0ceff"
+      elsif title =~ /^G: /
+        color = is_me ? "#1c8600" : "#baffa8"
       else
         color = is_me ? "#c30000" : "#ffb5b5"
       end

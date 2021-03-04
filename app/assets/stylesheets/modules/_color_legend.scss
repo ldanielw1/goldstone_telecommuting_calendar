@@ -1,0 +1,43 @@
+#color_legend {
+  .room {
+    font-weight: bold;
+    margin-top: 10px;
+  }
+
+  .my_reservations, .other_reservations {
+    border-radius: 3px;
+    color: white;
+    display: inline;
+    font-weight: normal;
+    padding: 4px 10px;
+  }
+
+  .room1 {
+    .my_reservations    { background-color: #0069d6; }
+    .other_reservations { background-color: #cfe6fd; }
+  }
+  .room2 {
+    .my_reservations    { background-color: #e65e00; }
+    .other_reservations { background-color: #ffdec8; }
+  }
+  .living_room {
+    .my_reservations    { background-color: #464646; }
+    .other_reservations { background-color: #e8e8e8; }
+  }
+  .quiet_living_room {
+    .my_reservations    { background-color: #8200bb; }
+    .other_reservations { background-color: #f0ceff; }
+  }
+  .bedroom {
+    .my_reservations    { background-color: #464646; }
+    .other_reservations { background-color: #e8e8e8; }
+  }
+  .garage {
+    .my_reservations    { background-color: #1c8600; }
+    .other_reservations { background-color: #baffa8; }
+  }
+  .unassigned {
+    .my_reservations    { background-color: #c30000; }
+    .other_reservations { background-color: #ffb5b5; }
+  }
+}
