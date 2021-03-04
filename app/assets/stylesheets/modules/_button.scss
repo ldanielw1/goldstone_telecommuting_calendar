@@ -1,0 +1,264 @@
+.button {
+  $button-height: 40px;
+  $button-small-height: 30px;
+  $button-mini-height: 25px;
+  $button-border-radius: $default-border-radius;
+
+  $button-icon-small-size: 16px;
+  $button-icon-xsmall-size: 12px;
+
+  height: $button-height;
+  line-height: $button-height;
+  padding: 0 $default-padding / 2;
+  min-width: 100px;
+  display: inline-block;
+
+  position: relative;
+
+  cursor: pointer;
+  outline: none;
+
+  font-size: $default-font-size;
+  font-family: $default-font-family;
+  font-weight: $default-font-weight-bold;
+
+  background: $background-color;
+  color: $text-color;
+
+  text-decoration: none !important;
+  text-align: center;
+
+  border: 1px solid $border-color;
+  border-radius: $button-border-radius;
+
+  z-index: 0;
+  transition: all .25s;
+
+  &:before {
+    border-radius: inherit;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    z-index: -1;
+    transition: all .25s;
+  }
+
+  &:hover {
+    background: darken($background-color, 3%);
+    color: $text-color;
+
+    &:before {
+      opacity: 1;
+    }
+  }
+
+  &:focus {
+    font-weight: $default-font-weight-bold;
+    color: $text-color;
+    outline: none;
+    box-shadow: 0 0 0 1px $background-color, 0 0 0 3px transparentize($dark-gray, .7);
+  }
+
+  &:active {
+    font-weight: $default-font-weight-bold;
+    color: $text-color;
+    outline: none;
+    background: darken($background-color, 7%);
+
+    &:before {
+      opacity: .2;
+    }
+  }
+
+  // Primary Button (Blue)
+
+  &.button-primary {
+    background: linear-gradient(to bottom, lighten($primary-color, 5%), darken($primary-color, 5%));
+    border-color: darken($primary-color, 10%);
+    color: $white;
+
+    &:link {
+      color: $white;
+    }
+
+    &:before {
+      background: linear-gradient(to bottom, lighten($primary-color, 10%), darken($primary-color, 0%));
+    }
+
+    &:hover,
+    &:active,
+    &:focus,
+    &.is-active {
+      background: linear-gradient(to bottom, lighten($primary-color, 5%), darken($primary-color, 5%));
+    }
+
+    &:hover {
+      color: $white;
+    }
+
+    &:focus {
+      color: $white;
+      box-shadow: 0 0 0 1px $background-color, 0 0 0 3px transparentize($primary-color, .7);
+    }
+
+    &:active {
+      color: $white;
+    }
+  }
+
+  // Secondary Button (Light Blue)
+
+  &.button-secondary {
+    background: linear-gradient(to bottom, lighten($secondary-color, 5%), darken($secondary-color, 5%));
+    border-color: darken($secondary-color, 10%);
+    color: $white;
+
+    &:link {
+      color: $white;
+    }
+
+    &:before {
+      background: linear-gradient(to bottom, lighten($secondary-color, 10%), darken($secondary-color, 0%));
+    }
+
+    &:hover,
+    &:active,
+    &:focus,
+    &.is-active {
+      background: linear-gradient(to bottom, lighten($secondary-color, 5%), darken($secondary-color, 5%));
+    }
+
+    &:hover {
+      color: $white;
+    }
+
+    &:focus {
+      color: $white;
+      box-shadow: 0 0 0 1px $background-color, 0 0 0 3px transparentize($secondary-color, .7);
+    }
+
+    &:active {
+      color: $white;
+    }
+  }
+
+  // Blue Outline Button
+
+  &.button-outline {
+    border-color: $primary-color;
+    color: $primary-color;
+
+    &:hover {
+      background: lighten($primary-color, 47%);
+      color: $primary-color;
+
+      &:before {
+        opacity: 1;
+      }
+    }
+
+    &:focus {
+      font-weight: $default-font-weight-bold;
+      color: $primary-color;
+      outline: none;
+      box-shadow: 0 0 0 1px $background-color, 0 0 0 3px transparentize($primary-color, .7);
+    }
+
+    &:active {
+      font-weight: $default-font-weight-bold;
+      color: $primary-color;
+      outline: none;
+      background: darken(lighten($primary-color, 47%), 7%);
+
+      &:before {
+        opacity: .2;
+      }
+    }
+  }
+
+  // Danger Button
+
+  &.button-danger {
+    background: linear-gradient(to bottom, lighten($danger-color, 5%), darken($danger-color, 5%));
+    border-color: darken($danger-color, 10%);
+    color: $white;
+
+    &:link {
+      color: $white;
+    }
+
+    &:before {
+      background: linear-gradient(to bottom, lighten($danger-color, 10%), darken($danger-color, 0%));
+    }
+
+    &:hover,
+    &:active,
+    &:focus,
+    &.is-active {
+      background: linear-gradient(to bottom, lighten($danger-color, 5%), darken($danger-color, 5%));
+    }
+
+    &:hover {
+      color: $white;
+    }
+
+    &:focus {
+      color: $white;
+      box-shadow: 0 0 0 1px $background-color, 0 0 0 3px transparentize($danger-color, .7);
+    }
+
+    &:active {
+      color: $white;
+    }
+  }
+
+  &.button-full-width {
+    text-align: center;
+    width: 100%;
+  }
+
+  &.button-warning {
+    background: $warning-color;
+
+    &:hover {
+      background: darken($warning-color, 5%);
+    }
+  }
+
+  &.button-outline {
+    background: none;
+    border: solid 1px white;
+
+  }
+
+  &.button-small {
+    height: $button-small-height;
+    line-height: $button-small-height - 1;
+    padding: 0 $default-padding / 4;
+    font-size: $default-font-size - 2;
+  }
+}
+
+// BTN CLASS OVERWRITES
+
+.btn {
+  transition: all .25s;
+}
+
+.btn-danger {
+  background-color: $danger-color !important;
+  border-color: $danger-color !important;
+
+  &:hover {
+    background-color: darken($danger-color, 10%) !important;
+    border-color: darken($danger-color, 10%) !important;
+  }
+}
+
+.btn-warning {
+    background: $orange;
+}

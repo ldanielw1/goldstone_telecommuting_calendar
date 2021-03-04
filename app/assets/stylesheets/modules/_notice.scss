@@ -1,0 +1,32 @@
+.notice {
+  background: lighten($primary-color, 25%);
+  color: white;
+  display: inline-block;
+  padding: $default-padding / 2 $default-padding;
+  position: fixed;
+  left: 250px;
+  top: 0;
+  z-index: 2;
+  width: calc(100vw - 250px);
+
+  &.notice-warning {
+    background: $danger-color;
+
+    a {
+      color: darken($danger-color, 30%);
+
+      &:hover {
+        color: darken($danger-color, 40%);
+      }
+    }
+  }
+
+  &.notice-fullscreen {
+    left: 0;
+    width: 100%;
+  }
+
+  @media (max-width: 600px) {
+    display: none;
+  }
+}

@@ -1,0 +1,49 @@
+// General CSS Layout
+
+html {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+  background: $background-color;
+  color: $text-color;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 300;
+  font-size: $default-font-size;
+  letter-spacing: .3px;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.link {
+  color: $link-color;
+  text-decoration: underline;
+  transition: all .25s;
+
+  &:hover {
+    color: darken($link-color, 20%);
+  }
+}
+
+// Main Content
+.content {
+    height: 100%;
+    width: 100%;
+}
+
+.main-content {
+  padding: $default-padding/2 $default-padding/3 0px !important;
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}

@@ -1,0 +1,21 @@
+<div class="nav" data-no-transition-cache>
+  <div class="nav_item nav_logout">
+    <%= link_to signout_path, class: "logout" do %>
+      Sign out
+    <% end %>
+  </div>
+  <div class="nav_item">
+    <span class="nav_userIcon">
+      <% if current_user.profile_img == nil %>
+        <i class="fa fa-user"></i>
+      <% else %>
+        <img src="<%= current_user.profile_img %>" class="profile" />
+      <% end %>
+    </span>
+  </div>
+
+  <div class="nav_title noselect">
+    Goldstone Meetings
+  </div>
+
+</div>

@@ -1,0 +1,21 @@
+<div class="login-background">
+  <div class="login__container center">
+    <%= image_tag("/assets/signin_banner.png", class: "login__container-header") %>
+
+    <div class="login__container-contents">
+      <% if flash[:alert] %>
+        <div class="alert"><%= flash[:alert] %></div>
+      <% end %>
+
+      <h3>🎉 Welcome to Goldstone Telecommuting! 🤓 🎉</h3>
+      <h4><i>Log in to see meeting room schedules </i></h4>
+      <br>
+      <br>
+      <%= google_sign_in_button proceed_to: create_login_url, class: "button button-primary" do %>
+        <h4><%= icon("fab", "google") %>&nbsp;&nbsp;Sign in with Google</h4>
+      <% end %>
+
+    </div>
+
+  </div>
+</div>

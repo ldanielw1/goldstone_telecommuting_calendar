@@ -1,0 +1,59 @@
+// NAVIGATION
+.nav {
+  $nav-background-color: $lighter-gray;
+  $nav-primary-color: $blue;
+  $nav-text-color: $dark-gray;
+
+  background: $nav-background-color;
+  box-shadow: 1px 0 10px transparentize($dark-gray, .6);
+  color: $nav-text-color;
+
+  position: fixed;
+  top: 0;
+  left: 50%;
+  margin-left: -225px;
+  height: 40px;
+  width: 450px;
+  z-index: 100;
+
+  padding: 0px $default-padding;
+  border-radius: 0 0 25px 25px;
+
+  .nav_userIcon {
+    height: 30px;
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $primary-color;
+    border-radius: 50%;
+    box-shadow: 0 0 0 1px $nav-background-color, 0 0 0 3px transparentize($primary-color, .7);
+    overflow: hidden;
+  }
+
+  .nav_item {
+    float: right;
+    margin-right: $default-padding/2;
+    margin-top: 5px;
+  }
+
+  .nav_title {
+    margin-top: 3px;
+    margin-left: 5px;
+    font-size: 25px
+  }
+
+  .nav_logout {
+    margin-top: 5px;
+  }
+
+  .logout {
+    font-size: 20px;
+
+    .nav_item {
+      &:hover {
+        background-color: transparentize($red, .85);
+      }
+    }
+  }
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Goldstone Telecommuting Calendar</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%= csrf_meta_tags %>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,700,600' rel='stylesheet' type='text/css'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= favicon_link_tag 'favicon.ico' %>
+  </head>
+
+  <body>
+    <% notice_class = current_user ? "" : "notice-fullscreen" %>
+    <% if flash[:notice] %>
+      <div class="notice <%= notice_class %> animated fadeIn">
+        <i class="fa fa-check-circle icon-right-spaced"></i>
+        <%= raw(flash[:notice]) %>
+      </div>
+    <% end %>
+    <% if flash[:error] %>
+      <div class="notice notice-warning <%= notice_class %> animated fadeIn">
+        <i class="fa fa-check-circle icon-right-spaced"></i>
+        <%= raw(flash[:error]) %>
+      </div>
+    <% end %>
+
+    <% if current_user %>
+      <div class="content">
+        <% cache([current_user, "web_view"]) do %>
+          <%= render "layouts/nav" %>
+        <% end %>
+
+        <div class="main-content">
+          <%= content_for?(:admins) ? yield(:admins) : yield %>
+        </div>
+      </div>
+
+    <% else %>
+      <div class="content signIn">
+        <div class="signIn-container">
+          <%= yield %>
+        </div>
+      </div>
+    <% end %>
+
+
+  </body>
+</html>

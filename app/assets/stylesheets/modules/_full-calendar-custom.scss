@@ -1,0 +1,26 @@
+.fc-event {
+	background-color: $primary-color;
+    font-size: 12px;
+    white-space: normal;
+}
+
+.fc-event[href], .fc-event.fc-draggable, .fc-title, .fc-time {
+    cursor: default
+}
+
+.fc-title > a, .fc-title > a:hover {
+    color: white;
+}
+
+.fc-toolbar.fc-header-toolbar {
+    margin-bottom: 10px
+}
+
+.fc-day-grid-event .fc-content {
+    white-space: unset;
+    overflow: unset;
+}
+
+.fc-time-grid .fc-slats td {
+  height: 3em;
+}
