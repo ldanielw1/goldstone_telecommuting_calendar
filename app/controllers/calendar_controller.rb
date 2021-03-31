@@ -82,7 +82,7 @@ class CalendarController < ApplicationController
   end
 
   def get_date_string(date)
-    return "#{date.year}-#{date.month}-#{date.day}"
+    return "#{date.year.to_s.rjust(2, "0")}-#{date.month.to_s.rjust(2, "0")}-#{date.day.to_s.rjust(2, "0")}"
   end
 
   def get_color(title)
